@@ -1,0 +1,25 @@
+{
+  "name": "snowguy13-got-bingo-app",
+  "version": "1.0.0",
+  "description": "Simple Game of Thrones bingo webapp for Season 8",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "keywords": [
+    "Game",
+    "of",
+    "Thrones",
+    "bingo",
+    "season",
+    "8"
+  ],
+  "author": "Tom Scallon",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.16.0"
+  },
+  "dependencies": {
+    "react": "^16.4.1"
+  }
+}
