@@ -5,7 +5,7 @@ module.exports = {
   mode: 'production',
 
   // App entry point
-  entry: 'app.js',
+  entry: './client/app.js',
 
   // Where to save the output file
   output: {
