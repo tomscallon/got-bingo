@@ -10,7 +10,7 @@ module.exports = {
   // Where to save the output file
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'app.bundle.js',
+    filename: './public/app.bundle.js',
   },
 
   // Use a full source map
