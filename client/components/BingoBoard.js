@@ -10,6 +10,10 @@ type Props<T> = {
 }
 
 class BingoBoard<T> extends React.Component<Props<T>> {
+  static defaultProps = {
+    renderFreeSpace: () => "Free Space",
+  };
+
   static boardClassName = 'bingo-board';
   static rowClassName = 'bingo-board-row';
   static itemClassName = 'bingo-board-item';
