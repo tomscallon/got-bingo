@@ -2,6 +2,7 @@
   "name": "snowguy13-got-bingo-app",
   "version": "1.0.0",
   "description": "Simple Game of Thrones bingo webapp for Season 8",
+  "repository": "https://github.com/tomscallon/got-bingo",
   "main": "server.js",
   "scripts": {
     "build": "webpack",
@@ -20,11 +21,23 @@
   "author": "Tom Scallon",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/preset-env": "^7.0.0-rc.1",
+    "@babel/preset-flow": "^7.0.0-rc.1",
+    "@babel/preset-react": "^7.0.0-rc.1",
+    "babel-loader": "^8.0.0-beta.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "css-loader": "^1.0.0",
     "flow-bin": "^0.78.0",
-    "webpack": "^4.16.0"
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.22.1",
+    "webpack": "^4.16.0",
+    "webpack-cli": "^3.1.0"
   },
   "dependencies": {
     "express": "^4.16.3",
-    "react": "^16.4.1"
+    "react": "^16.4.1",
+    "react-dom": "^16.4.2"
   }
 }

@@ -56,7 +56,7 @@ class BingoBoard<T> extends React.Component<Props<T>> {
     const {className} = this.props;
 
     return (
-      <div className={className}>
+      <div className={`${className || ''} ${BingoBoard.boardClassName}`}>
         {[0, 1, 2, 3, 4].map(i => this._renderRow(i))}
       </div>
     );

@@ -1,6 +1,7 @@
 /* @flow */
 
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import BingoBoard from './components/BingoBoard';
 
 class App extends React.Component<{}> {
@@ -14,7 +15,14 @@ class App extends React.Component<{}> {
   }
 }
 
-const root = document.getElementById('root');
-React.DOM.render(<App />, root);
+window.addEventListener('DOMContentLoaded', () => {
+  const root = document.getElementById('root');
 
-console.log('Hello there...');
+  console.log('Looking for root');
+  if (root) {
+    ReactDOM.render(<App />, root);
+    console.log('Hello there...');
+  } else {
+    console.log('Did not find it...');
+  }
+});

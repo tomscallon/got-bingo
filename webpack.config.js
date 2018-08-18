@@ -1,3 +1,5 @@
+/* @flow */
+
 const path = require('path');
 
 module.exports = {
@@ -10,7 +12,7 @@ module.exports = {
   // Where to save the output file
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: './public/app.bundle.js',
+    filename: './app.bundle.js',
   },
 
   // Use a full source map
@@ -22,17 +24,18 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        loader: 'babel-loader',
         options: {
-          presets: ['env', 'flow', 'react']
+          presets: ['@babel/preset-env', '@babel/preset-flow', '@babel/preset-react'],
+          plugins: ['transform-class-properties']
         }
       },
       {
         test: /\.scss$/,
-        use: [
+        loader: [
           'style-loader',
           'css-loader',
-          'autoprefixer-loader',
+          'postcss-loader',
           'sass-loader'
         ]
       }
@@ -44,7 +47,7 @@ module.exports = {
     modules: [
       'node_modules',
       path.resolve(__dirname)
-    ]
+    ],
     extensions: ['.js', '.json', '.jsx', '.css']
   }
 };
