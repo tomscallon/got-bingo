@@ -1,6 +1,7 @@
 /* @flow */
 
-const React = require('react');
+import './BingoBoard.scss';
+import * as React from 'react';
 
 type Props<T> = {
   className?: string,
@@ -43,7 +44,7 @@ class BingoBoard<T> extends React.Component<Props<T>> {
 
         // If this is the middle row, render a free space instead of an item
         row === 2 ?
-          renderFreeSpace() :
+          <div className={BingoBoard.itemClassName}>{renderFreeSpace()}</div> :
           this._renderItem(items[itemIndex++], row, 2),
 
         this._renderItem(items[itemIndex++], row, 3),
