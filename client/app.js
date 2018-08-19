@@ -18,11 +18,11 @@ class App extends React.Component<{}> {
 window.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
 
-  // console.log('Looking for root');
-  // if (root) {
-  //   ReactDOM.render(<App />, root);
-  //   console.log('Hello there...');
-  // } else {
-  //   console.log('Did not find it...');
-  // }
+  console.log('Looking for root');
+  if (root) {
+    ReactDOM.render(<App />, root);
+    console.log('Hello there...');
+  } else {
+    console.log('Did not find it...');
+  }
 });
