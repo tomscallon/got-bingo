@@ -1,5 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+@import '../colors';
 
-#root {
+.game-of-thrones-bingo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: 'Sawarabi Mincho', Helvetica, sans-serif;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-primary-lighter;
+  color: $color-primary-darker;
+}
+
+.game-of-thrones-bingo-title {
+  margin: 0;
+  font-size: 2em;
+}
+
+.game-of-thrones-bingo-subtitle {
+  margin-top: 0;
+  color: $color-primary-dark;
+  font-size: 1em;
+}
+
+.game-of-thrones-bingo button {
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+  background-color: $color-primary-light;
+  padding: 0.25em 0.75em;
+  border-radius: 0.75em;
+  box-shadow: none;
 }
