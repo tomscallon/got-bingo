@@ -7,11 +7,13 @@ type Props<T> = {
   className?: string,
   items: Array<T>,
   renderItem: (item: T, row: number, col: number) => React.Node,
+  renderEmptySpace: (row: number, col: number) => ?React.Node,
   renderFreeSpace: () => React.Node,
 }
 
 class BingoBoard<T> extends React.Component<Props<T>> {
   static defaultProps = {
+    renderEmptySpace: () => null,
     renderFreeSpace: () => "Free Space",
   };
 
@@ -19,14 +21,14 @@ class BingoBoard<T> extends React.Component<Props<T>> {
   static rowClassName = 'bingo-board-row';
   static itemClassName = 'bingo-board-item';
 
-  _renderItem(item: ?T, row: number, col: number): React.Node {
-    const {renderItem} = this.props;
+  _renderSpace(item: ?T, row: number, col: number): React.Node {
+    const {renderItem, renderEmptySpace} = this.props;
 
     return (
       <div className={BingoBoard.itemClassName}>
         {
           item === null || item === undefined ?
-            null :
+            renderEmptySpace(row, col) :
             renderItem(item, row, col)
         }
       </div>
@@ -50,7 +52,7 @@ class BingoBoard<T> extends React.Component<Props<T>> {
         if (row === 2 && col === 2) continue;
 
         // Render the item at the current spot.
-        renderedItems.push(this._renderItem(items[itemIndex++], row, col));
+        renderedItems.push(this._renderSpace(items[itemIndex++], row, col));
       }
     }
 
