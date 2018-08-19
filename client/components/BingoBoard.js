@@ -33,32 +33,33 @@ class BingoBoard<T> extends React.Component<Props<T>> {
     );
   }
 
-  _renderRow(row: number): React.Node {
-    const {items, renderFreeSpace} = this.props;
-    let itemIndex = 5 * row + (row > 2 ? -1 : 0);
-
+  _renderFreeSpace(): React.Node {
     return (
-      <div className={BingoBoard.rowClassName}>{[
-        this._renderItem(items[itemIndex++], row, 0),
-        this._renderItem(items[itemIndex++], row, 1),
-
-        // If this is the middle row, render a free space instead of an item
-        row === 2 ?
-          <div className={BingoBoard.itemClassName}>{renderFreeSpace()}</div> :
-          this._renderItem(items[itemIndex++], row, 2),
-
-        this._renderItem(items[itemIndex++], row, 3),
-        this._renderItem(items[itemIndex++], row, 4),
-      ]}</div>
+      <div className={BingoBoard.itemClassName}>
+        {this.props.renderFreeSpace()}
+      </div>
     );
   }
 
   render() {
-    const {className} = this.props;
+    const {className, items, renderFreeSpace} = this.props;
+    const renderedItems = [];
+    for (let itemIndex = 0, row = 0; row < 5; row++) {
+      for (let col = 0; col < 5; col++) {
+        // Skip the free space.
+        if (row === 2 && col === 2) continue;
+
+        // Render the item at the current spot.
+        renderedItems.push(this._renderItem(items[itemIndex++], row, col));
+      }
+    }
+
+    // Insert the free space.
+    renderedItems.splice(12, 0, this._renderFreeSpace());
 
     return (
       <div className={`${className || ''} ${BingoBoard.boardClassName}`}>
-        {[0, 1, 2, 3, 4].map(i => this._renderRow(i))}
+        {renderedItems}
       </div>
     );
   }
