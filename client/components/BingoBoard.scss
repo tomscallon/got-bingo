@@ -1,10 +1,6 @@
 .bingo-board {
   display: grid;
+  grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 5px;
-}
-
-.bingo-board-item {
-  background-color: #EEE;
-  border-radius: 5px;
 }

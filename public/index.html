@@ -3,8 +3,52 @@
   <head>
     <title>Game of Thrones Season 8 Bingo</title>
     <script src="app.bundle.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+
+      body {
+        font-family: 'Sawarabi Mincho', Helvetica, sans-serif;
+        background-color: #001b31;
+        color: #ccd1d5;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .loading .spinner {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        border-top: 3px solid #ccd1d5;
+        animation: rotate 1s linear infinite;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading">
+        <h1>Winter is Coming</h1>
+        <div class="spinner"></div>
+      </div>
+    </div>
   </body>
 </html>
