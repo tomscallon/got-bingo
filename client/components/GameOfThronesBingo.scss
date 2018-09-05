@@ -12,8 +12,8 @@
   font-family: 'Sawarabi Mincho', Helvetica, sans-serif;
   align-items: center;
   justify-content: center;
-  background-color: $color-primary-lighter;
-  color: $color-primary-darker;
+  background-color: $color-background;
+  color: $color-primary;
 }
 
 .game-of-thrones-bingo-title {
@@ -23,16 +23,29 @@
 
 .game-of-thrones-bingo-subtitle {
   margin-top: 0;
-  color: $color-primary-dark;
+  color: $color-secondary;
   font-size: 1em;
 }
 
 .game-of-thrones-bingo button {
   cursor: pointer;
   font-family: inherit;
-  color: inherit;
-  background-color: $color-primary-light;
+  color: $color-secondary;
+  background-color: $color-accent;
   padding: 0.25em 0.75em;
-  border-radius: 0.75em;
-  box-shadow: none;
+  border-width: 0;
+  border-radius: 0.25em;
+  box-shadow: 0 0 16px $color-box-shadow;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 0.3s;
+
+  &:hover, &:active {
+    background-color: $color-accent-hard;
+    color: $color-primary;
+    box-shadow: 0 0 16px $color-box-shadow-dark;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
