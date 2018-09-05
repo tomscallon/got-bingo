@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
 @import '../colors';
+@import '../fonts';
 
 .game-of-thrones-bingo {
   position: fixed;
@@ -9,7 +9,9 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'Sawarabi Mincho', Helvetica, sans-serif;
+  font-family: 'Mukta', Helvetica, sans-serif;
+  font-weight: 200;
+  word-spacing: 10px;
   align-items: center;
   justify-content: center;
   background-color: $color-background;
@@ -17,24 +19,29 @@
 }
 
 .game-of-thrones-bingo-title {
-  margin: 0;
+  margin-top: 0;
+  font-family: 'Game of Thrones', 'Times New Roman', serif;
   font-size: 2em;
+  font-weight: normal;
 }
 
 .game-of-thrones-bingo-subtitle {
   margin-top: 0;
   color: $color-secondary;
+  font-family: 'Game of Thrones', 'Times New Roman', serif;
   font-size: 1em;
+  font-weight: normal;
 }
 
 .game-of-thrones-bingo button {
   cursor: pointer;
   font-family: inherit;
+  font-weight: inherit;
   color: $color-secondary;
   background-color: $color-accent;
-  padding: 0.25em 0.75em;
+  padding: 0.25em 1.25em;
   border-width: 0;
-  border-radius: 0.25em;
+  border-radius: 1em;
   box-shadow: 0 0 16px $color-box-shadow;
   transition-property: color, background-color, box-shadow;
   transition-duration: 0.3s;
