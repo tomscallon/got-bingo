@@ -1,6 +1,9 @@
+/* @flow */
+
 export type Character = {|
   name: string,
-  image: string,
+  nicknames: Array<string>,
+  imageURL: string,
 |};
 
 export type Board = {|
