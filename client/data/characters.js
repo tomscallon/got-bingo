@@ -5,22 +5,22 @@ import type {Character} from '../types';
 const characters: Array<Character> = [
   {
     name: 'Tyrion Lannister',
-    nicknames: ['Imp', 'Halfman', 'Yollo', 'Hugor Hill', 'Little Lion', 'Demon Monkey', 'Dwarf'],
+    nicknames: ['The Imp', 'Halfman', 'Yollo', 'Hugor Hill', 'Little Lion', 'Demon Monkey', 'Dwarf'],
     imageURL: '',
   },
   {
     name: 'Jamie Lannister',
-    nicknames: ['Kingslayer', 'Oathbreaker', 'Young Lion'],
+    nicknames: ['Kingslayer', 'Oathbreaker', 'The Young Lion'],
     imageURL: '',
   },
   {
     name: 'Cersei Lannister',
-    nicknames: ['Lioness'],
+    nicknames: ['The Lioness'],
     imageURL: '',
   },
   {
     name: 'Daenerys Targaryen',
-    nicknames: ['Stormborn', 'Unburnt', 'Breaker of Chains', 'Mother of Dragons', 'Mhysa', 'Silver Queen', 'Dragon Queen', 'Khaleesi'],
+    nicknames: ['Stormborn', 'The Unburnt', 'Breaker of Chains', 'Mother of Dragons', 'Mhysa', 'The Silver Queen', 'The Dragon Queen', 'Khaleesi'],
     imageURL: '',
   },
   {
@@ -30,22 +30,22 @@ const characters: Array<Character> = [
   },
   {
     name: 'Davos Seaworth',
-    nicknames: [],
+    nicknames: ['The Onion Knight', 'The Onion Lord', 'Davos Shorthand'],
     imageURL: '',
   },
   {
     name: 'Sansa Stark',
-    nicknames: [],
+    nicknames: ['Little Dove', 'Little Bird', 'Alayne', 'Jonquil'],
     imageURL: '',
   },
   {
     name: 'Arya Stark',
-    nicknames: [],
+    nicknames: ['Arry', 'Lanna of the Canals', 'Horseface', 'Arya Underfoot', 'Cat of the Canals', 'No One'],
     imageURL: '',
   },
   {
     name: 'Bran Stark',
-    nicknames: [],
+    nicknames: ['The Three-Eyed Raven', 'Little Lord', 'Bran the Broken', 'The Winged Wolf'],
     imageURL: '',
   },
   {
@@ -55,12 +55,12 @@ const characters: Array<Character> = [
   },
   {
     name: 'Brienne of Tarth',
-    nicknames: [],
+    nicknames: ['Brienne the Beauty', 'The Maid of Tarth', 'Brienne the Blue'],
     imageURL: '',
   },
   {
     name: 'Samwell Tarly',
-    nicknames: [],
+    nicknames: ['Ser Piggy', 'Prince Pork-chop', 'Lady Piggy', 'Sam the Slayer', 'Lord of Ham', 'Black Sam'],
     imageURL: '',
   },
   {
@@ -69,33 +69,33 @@ const characters: Array<Character> = [
     imageURL: '',
   },
   {
-    name: 'Sandor “The Hound” Clegane',
-    nicknames: [],
+    name: 'Sandor Clegane',
+    nicknames: ['The Hound', 'Dog'],
     imageURL: '',
   },
   {
     name: 'Jorah Mormont',
-    nicknames: [],
+    nicknames: ['Jorah the Andal'],
     imageURL: '',
   },
   {
-    name: 'Varys',
-    nicknames: [],
+    name: 'Lord Varys',
+    nicknames: ['The Spider', 'The Eunuch', 'Rugen', 'Varys of Lys'],
     imageURL: '',
   },
   {
-    name: 'Melisandre',
-    nicknames: [],
+    name: 'Lady Melisandre',
+    nicknames: ['Melisandre of Asshai', 'The Red Woman', 'The Red Witch'],
     imageURL: '',
   },
   {
     name: 'Bronn',
-    nicknames: [],
+    nicknames: ['Ser Bronn of the Blackwater', 'Cooper', 'The Cutthroat'],
     imageURL: '',
   },
   {
     name: 'Gendry',
-    nicknames: [],
+    nicknames: ['Clovis', 'The Bull', 'Ser Gendry of the Hollow Hill'],
     imageURL: '',
   },
   {
