@@ -1,11 +1,19 @@
 /* @flow */
 
-import type {Character} from '../types';
+import type { Character } from '../types';
 
 const characters: Array<Character> = [
   {
     name: 'Tyrion Lannister',
-    nicknames: ['The Imp', 'Halfman', 'Yollo', 'Hugor Hill', 'Little Lion', 'Demon Monkey', 'Dwarf'],
+    nicknames: [
+      'The Imp',
+      'Halfman',
+      'Yollo',
+      'Hugor Hill',
+      'Little Lion',
+      'Demon Monkey',
+      'Dwarf',
+    ],
     imageURL: '',
   },
   {
@@ -20,12 +28,27 @@ const characters: Array<Character> = [
   },
   {
     name: 'Daenerys Targaryen',
-    nicknames: ['Stormborn', 'The Unburnt', 'Breaker of Chains', 'Mother of Dragons', 'Mhysa', 'The Silver Queen', 'The Dragon Queen', 'Khaleesi'],
+    nicknames: [
+      'Stormborn',
+      'The Unburnt',
+      'Breaker of Chains',
+      'Mother of Dragons',
+      'Mhysa',
+      'The Silver Queen',
+      'The Dragon Queen',
+      'Khaleesi',
+    ],
     imageURL: '',
   },
   {
     name: 'Jon Snow',
-    nicknames: ['Aegon Targaryen', 'Lord Snow', 'Bastard of Winterfell', 'King Crow', 'White Wolf'],
+    nicknames: [
+      'Aegon Targaryen',
+      'Lord Snow',
+      'Bastard of Winterfell',
+      'King Crow',
+      'White Wolf',
+    ],
     imageURL: '',
   },
   {
@@ -40,12 +63,24 @@ const characters: Array<Character> = [
   },
   {
     name: 'Arya Stark',
-    nicknames: ['Arry', 'Lanna of the Canals', 'Horseface', 'Arya Underfoot', 'Cat of the Canals', 'No One'],
+    nicknames: [
+      'Arry',
+      'Lanna of the Canals',
+      'Horseface',
+      'Arya Underfoot',
+      'Cat of the Canals',
+      'No One',
+    ],
     imageURL: '',
   },
   {
     name: 'Bran Stark',
-    nicknames: ['The Three-Eyed Raven', 'Little Lord', 'Bran the Broken', 'The Winged Wolf'],
+    nicknames: [
+      'The Three-Eyed Raven',
+      'Little Lord',
+      'Bran the Broken',
+      'The Winged Wolf',
+    ],
     imageURL: '',
   },
   {
@@ -60,7 +95,14 @@ const characters: Array<Character> = [
   },
   {
     name: 'Samwell Tarly',
-    nicknames: ['Ser Piggy', 'Prince Pork-chop', 'Lady Piggy', 'Sam the Slayer', 'Lord of Ham', 'Black Sam'],
+    nicknames: [
+      'Ser Piggy',
+      'Prince Pork-chop',
+      'Lady Piggy',
+      'Sam the Slayer',
+      'Lord of Ham',
+      'Black Sam',
+    ],
     imageURL: '',
   },
   {
@@ -100,47 +142,71 @@ const characters: Array<Character> = [
   },
   {
     name: 'Theon Greyjoy',
-    nicknames: [],
+    nicknames: [
+      'Reek',
+      'Little Theon',
+      'Prince of Fools',
+      'Theon Turncloak',
+      'The Squid Prince',
+      'Theon Kinslayer',
+      'The Prince of Stink',
+    ],
     imageURL: '',
   },
   {
     name: 'Yara Greyjoy',
-    nicknames: [],
+    nicknames: ['Asha Greyjoy'],
     imageURL: '',
   },
   {
     name: 'Euron Greyjoy',
-    nicknames: [],
+    nicknames: ["Crow's Eye"],
     imageURL: '',
   },
   {
     name: 'Eddison Tollett',
-    nicknames: [],
+    nicknames: ['Dolorous Edd'],
     imageURL: '',
   },
   {
-    name: 'Tormund Giantsbane',
-    nicknames: [],
+    name: 'Tormund',
+    nicknames: [
+      'Tormund Giantsbane',
+      'Tormund Thunderfist',
+      'Tormund Horn-Blower',
+      'Tormund Tall-Talker',
+      'Breaker of Ice',
+      'Husband to Bears',
+      'Speaker to Gods',
+      'Father of Hosts',
+    ],
     imageURL: '',
   },
   {
-    name: 'Gregor “The Mountain” Clegane',
-    nicknames: [],
+    name: 'Gregor Clegane',
+    nicknames: [
+      'The Mountain',
+      'The Mountain That Rides',
+      'The Great Dog',
+      "Tywin Lannister's Mad Dog",
+      'The Enormity That Rides',
+      'Robert Strong',
+    ],
     imageURL: '',
   },
   {
     name: 'Grey Worm',
-    nicknames: [],
+    nicknames: ['Torkonodo'],
     imageURL: '',
   },
   {
     name: 'Podrick Payne',
-    nicknames: [],
+    nicknames: ['Pod'],
     imageURL: '',
   },
   {
     name: 'Yohn Royce',
-    nicknames: [],
+    nicknames: ['Bronze Yohn'],
     imageURL: '',
   },
   {
@@ -155,12 +221,12 @@ const characters: Array<Character> = [
   },
   {
     name: 'Beric Donarrion',
-    nicknames: [],
+    nicknames: ['The Lightning Lord'],
     imageURL: '',
   },
   {
     name: 'Drogon',
-    nicknames: [],
+    nicknames: ['The Winged Shadow'],
     imageURL: '',
   },
   {
@@ -174,7 +240,7 @@ const characters: Array<Character> = [
     imageURL: '',
   },
   {
-    name: 'Night king',
+    name: 'Night King',
     nicknames: [],
     imageURL: '',
   },
@@ -184,22 +250,12 @@ const characters: Array<Character> = [
     imageURL: '',
   },
   {
-    name: 'Robin Arryn',
-    nicknames: [],
-    imageURL: '',
-  },
-  {
-    name: 'Tyene Sand',
-    nicknames: [],
+    name: 'Robert Arryn',
+    nicknames: ['Robin Arryn'],
     imageURL: '',
   },
   {
     name: 'Ellaria Sand',
-    nicknames: [],
-    imageURL: '',
-  },
-  {
-    name: 'Robert Glover',
     nicknames: [],
     imageURL: '',
   },
@@ -227,7 +283,7 @@ const characters: Array<Character> = [
     name: 'Ilyn Payne',
     nicknames: [],
     imageURL: '',
-  }
+  },
 ];
 
 export default characters;
