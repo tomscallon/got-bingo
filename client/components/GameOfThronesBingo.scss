@@ -11,26 +11,28 @@
   flex-direction: column;
   font-family: 'Mukta', Helvetica, sans-serif;
   font-weight: 200;
-  word-spacing: 10px;
   align-items: center;
   justify-content: center;
   background-color: $color-background;
   color: $color-primary;
 }
 
-.game-of-thrones-bingo-title {
+.game-of-thrones-bingo-title,
+.game-of-thrones-bingo-subtitle {
   margin-top: 0;
   font-family: 'Game of Thrones', 'Times New Roman', serif;
-  font-size: 2em;
   font-weight: normal;
+  text-align: center;
+  word-spacing: 10px;
+}
+
+.game-of-thrones-bingo-title {
+  font-size: 2em;
 }
 
 .game-of-thrones-bingo-subtitle {
-  margin-top: 0;
   color: $color-secondary;
-  font-family: 'Game of Thrones', 'Times New Roman', serif;
   font-size: 1em;
-  font-weight: normal;
 }
 
 .game-of-thrones-bingo button {

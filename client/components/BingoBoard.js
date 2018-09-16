@@ -5,16 +5,16 @@ import * as React from 'react';
 
 type Props<T> = {
   className?: string,
-  items: Array<T>,
+  items: Array<?T>,
   renderItem: (item: T, row: number, col: number) => React.Node,
   renderEmptySpace: (row: number, col: number) => ?React.Node,
   renderFreeSpace: () => React.Node,
-}
+};
 
 class BingoBoard<T> extends React.Component<Props<T>> {
   static defaultProps = {
     renderEmptySpace: () => null,
-    renderFreeSpace: () => "Free Space",
+    renderFreeSpace: () => 'Free Space',
   };
 
   static boardClassName = 'bingo-board';
@@ -22,15 +22,13 @@ class BingoBoard<T> extends React.Component<Props<T>> {
   static itemClassName = 'bingo-board-item';
 
   _renderSpace(item: ?T, row: number, col: number): React.Node {
-    const {renderItem, renderEmptySpace} = this.props;
+    const { renderItem, renderEmptySpace } = this.props;
 
     return (
       <div className={BingoBoard.itemClassName}>
-        {
-          item === null || item === undefined ?
-            renderEmptySpace(row, col) :
-            renderItem(item, row, col)
-        }
+        {item === null || item === undefined
+          ? renderEmptySpace(row, col)
+          : renderItem(item, row, col)}
       </div>
     );
   }
@@ -44,7 +42,7 @@ class BingoBoard<T> extends React.Component<Props<T>> {
   }
 
   render() {
-    const {className, items, renderFreeSpace} = this.props;
+    const { className, items, renderFreeSpace } = this.props;
     const renderedItems = [];
     for (let itemIndex = 0, row = 0; row < 5; row++) {
       for (let col = 0; col < 5; col++) {

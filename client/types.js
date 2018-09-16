@@ -9,5 +9,5 @@ export type Character = {|
 export type Board = {|
   id: ?string,
   title: string,
-  items: Array<Character>,
+  items: Array<?Character>,
 |};

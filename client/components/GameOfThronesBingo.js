@@ -1,7 +1,7 @@
 /* @flow */
 import './GameOfThronesBingo.scss';
 
-import type {Board, Character} from '../types';
+import type { Board, Character } from '../types';
 
 import * as React from 'react';
 import GameOfThronesBingoBoard from './GameOfThronesBingoBoard';
@@ -13,20 +13,22 @@ type State = {|
 
 class GameOfThronesBingo extends React.Component<{}, State> {
   state: State = {
-    currentBoard: null
+    currentBoard: null,
+  };
+
+  _loadBoard = (board: Board) => {
+    this.setState(() => ({ currentBoard: board }));
   };
 
   render(): React.Node {
-    const {currentBoard} = this.state;
-    let content = null;;
-
-    // If currentBoard is null, then render the main menu.
-    if (!currentBoard) {
-      content = <GameOfThronesBingoMainMenu />;
-    } else {
-      // Otherwise, render that board.
-      content = <GameOfThronesBingoBoard board={currentBoard} />;
-    }
+    const { currentBoard } = this.state;
+    // If currentBoard is null, then render the main menu. Otherwise, render
+    // that board.
+    let content = !currentBoard ? (
+      <GameOfThronesBingoMainMenu loadBoard={this._loadBoard} />
+    ) : (
+      <GameOfThronesBingoBoard board={currentBoard} />
+    );
 
     return (
       <div className="game-of-thrones-bingo">
