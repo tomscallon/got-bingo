@@ -4,6 +4,8 @@ import type { Character } from '../types';
 
 import * as React from 'react';
 
+import GameOfThronesBingoCharacterTile from './GameOfThronesBingoCharacterTile';
+
 type Props = {
   character?: ?Character,
   onChange?: (?Character) => void,
@@ -13,7 +15,11 @@ class GameOfThronesBingoBoardItem extends React.Component<Props> {
   render(): React.Node {
     const { character } = this.props;
 
-    return character ? character.name : '(empty)';
+    return (
+      <div className="GameOfThronesBingoBoardItem/root">
+        {character && <GameOfThronesBingoCharacterTile character={character} />}
+      </div>
+    );
   }
 }
 
