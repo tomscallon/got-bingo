@@ -33,7 +33,7 @@ class GameOfThronesBingo extends React.Component<{}, State> {
     return (
       <div className="game-of-thrones-bingo">
         <h1 className="game-of-thrones-bingo-title">Game of Thrones Bingo</h1>
-        <h2 className="game-of-thrones-bingo-subtitle">Winter is Coming</h2>
+        <h2 className="game-of-thrones-bingo-subtitle">Winter is Here</h2>
         <div className="game-of-thrones-bingo-main">{content}</div>
       </div>
     );

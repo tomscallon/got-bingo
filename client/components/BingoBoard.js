@@ -7,7 +7,7 @@ type Props<T> = {
   className?: string,
   items: Array<?T>,
   renderItem: (item: T, row: number, col: number) => React.Node,
-  renderEmptySpace: (row: number, col: number) => ?React.Node,
+  renderEmptySpace: (row: number, col: number) => React.Node,
   renderFreeSpace: () => React.Node,
 };
 
