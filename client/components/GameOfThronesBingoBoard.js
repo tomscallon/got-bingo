@@ -22,8 +22,7 @@ class GameOfThronesBingoBoard extends React.Component<Props> {
       <BingoBoard
         className="game-of-thrones-bingo-board"
         items={items}
-        renderItem={c => <GameOfThronesBingoBoardItem character={c} />}
-        renderEmptySpace={() => <GameOfThronesBingoBoardItem />}
+        renderItemSpace={c => <GameOfThronesBingoBoardItem character={c} />}
       />
     );
   }

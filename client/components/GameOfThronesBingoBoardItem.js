@@ -6,6 +6,7 @@ import * as React from 'react';
 
 type Props = {
   character?: ?Character,
+  onChange?: (?Character) => void,
 };
 
 class GameOfThronesBingoBoardItem extends React.Component<Props> {

@@ -6,8 +6,7 @@ import * as React from 'react';
 type Props<T> = {
   className?: string,
   items: Array<?T>,
-  renderItem: (item: T, row: number, col: number) => React.Node,
-  renderEmptySpace: (row: number, col: number) => React.Node,
+  renderItemSpace: (item: ?T, row: number, col: number) => React.Node,
   renderFreeSpace: () => React.Node,
 };
 
@@ -22,13 +21,11 @@ class BingoBoard<T> extends React.Component<Props<T>> {
   static itemClassName = 'bingo-board-item';
 
   _renderSpace(item: ?T, row: number, col: number): React.Node {
-    const { renderItem, renderEmptySpace } = this.props;
+    const { renderItemSpace } = this.props;
 
     return (
       <div className={BingoBoard.itemClassName}>
-        {item === null || item === undefined
-          ? renderEmptySpace(row, col)
-          : renderItem(item, row, col)}
+        {renderItemSpace(item, row, col)}
       </div>
     );
   }
