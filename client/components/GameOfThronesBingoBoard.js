@@ -1,6 +1,6 @@
 /* @flow */
 
-import './GameOfThronesBingoBoard.scss';
+import styles from './GameOfThronesBingoBoard.scss';
 
 import type { Board } from '../types';
 
@@ -20,8 +20,9 @@ class GameOfThronesBingoBoard extends React.Component<Props> {
 
     return (
       <BingoBoard
-        className="game-of-thrones-bingo-board"
+        className={styles.root}
         items={items}
+        renderFreeSpace={c => <GameOfThronesBingoBoardItem freeSpace={true} />}
         renderItemSpace={c => <GameOfThronesBingoBoardItem character={c} />}
       />
     );

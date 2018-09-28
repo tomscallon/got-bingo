@@ -1,5 +1,5 @@
 /* @flow */
-import './GameOfThronesBingo.scss';
+import styles from './GameOfThronesBingo.scss';
 
 import type { Board, Character } from '../types';
 
@@ -31,10 +31,10 @@ class GameOfThronesBingo extends React.Component<{}, State> {
     );
 
     return (
-      <div className="game-of-thrones-bingo">
-        <h1 className="game-of-thrones-bingo-title">Game of Thrones Bingo</h1>
-        <h2 className="game-of-thrones-bingo-subtitle">Winter is Here</h2>
-        <div className="game-of-thrones-bingo-main">{content}</div>
+      <div className={styles.root}>
+        <h1 className={styles.title}>Game of Thrones Bingo</h1>
+        <h2 className={styles.subtitle}>Winter is Here</h2>
+        <div>{content}</div>
       </div>
     );
   }

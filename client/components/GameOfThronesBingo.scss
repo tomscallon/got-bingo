@@ -1,7 +1,7 @@
 @import '../colors';
 @import '../fonts';
 
-.game-of-thrones-bingo {
+:local(.root) {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,8 +17,8 @@
   color: $color-primary;
 }
 
-.game-of-thrones-bingo-title,
-.game-of-thrones-bingo-subtitle {
+:local(.title),
+:local(.subtitle) {
   margin-top: 0;
   font-family: 'Game of Thrones', 'Times New Roman', serif;
   font-weight: normal;
@@ -26,16 +26,16 @@
   word-spacing: 10px;
 }
 
-.game-of-thrones-bingo-title {
+:local(.title) {
   font-size: 2em;
 }
 
-.game-of-thrones-bingo-subtitle {
+:local(.subtitle) {
   color: $color-secondary;
   font-size: 1em;
 }
 
-.game-of-thrones-bingo button {
+:local(.root) button {
   cursor: pointer;
   font-family: inherit;
   font-weight: inherit;

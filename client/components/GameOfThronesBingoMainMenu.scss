@@ -1,10 +1,10 @@
-.game-of-thrones-bingo-main-menu {
+:local(.root) {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-}
 
-.game-of-thrones-bingo-main-menu button {
-  margin-top: 20px;
-  font-size: 24px;
+  button {
+    margin-top: 20px;
+    font-size: 24px;
+  }
 }

@@ -1,6 +1,6 @@
 /* @flow */
 
-import './BingoBoard.scss';
+import styles from './BingoBoard.scss';
 import * as React from 'react';
 
 type Props<T> = {
@@ -12,30 +12,15 @@ type Props<T> = {
 
 class BingoBoard<T> extends React.Component<Props<T>> {
   static defaultProps = {
-    renderEmptySpace: () => null,
     renderFreeSpace: () => 'Free Space',
   };
 
-  static boardClassName = 'bingo-board';
-  static rowClassName = 'bingo-board-row';
-  static itemClassName = 'bingo-board-item';
-
   _renderSpace(item: ?T, row: number, col: number): React.Node {
-    const { renderItemSpace } = this.props;
-
-    return (
-      <div className={BingoBoard.itemClassName}>
-        {renderItemSpace(item, row, col)}
-      </div>
-    );
+    return this.props.renderItemSpace(item, row, col);
   }
 
   _renderFreeSpace(): React.Node {
-    return (
-      <div className={BingoBoard.itemClassName}>
-        {this.props.renderFreeSpace()}
-      </div>
-    );
+    return this.props.renderFreeSpace();
   }
 
   render() {
@@ -55,9 +40,7 @@ class BingoBoard<T> extends React.Component<Props<T>> {
     renderedItems.splice(12, 0, this._renderFreeSpace());
 
     return (
-      <div className={`${className || ''} ${BingoBoard.boardClassName}`}>
-        {renderedItems}
-      </div>
+      <div className={`${className || ''} ${styles.root}`}>{renderedItems}</div>
     );
   }
 }

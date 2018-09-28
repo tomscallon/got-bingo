@@ -1,6 +1,6 @@
 /* @flow */
 
-import './GameOfThronesBingoMainMenu.scss';
+import styles from './GameOfThronesBingoMainMenu.scss';
 
 import type { Board } from '../types';
 
@@ -23,7 +23,7 @@ class GameOfThronesBingoMainMenu extends React.Component<Props> {
 
   render(): React.Node {
     return (
-      <div className="game-of-thrones-bingo-main-menu">
+      <div className={styles.root}>
         <button onClick={this._loadNewEmptyBoard}>Start New Board</button>
         <button>Load Existing Board</button>
         <button>What is this?</button>
