@@ -27,10 +27,10 @@ class GameOfThronesBingoBoardItem extends React.Component<Props> {
     let content: React.Node;
     if (freeSpace) {
       content = 'Free Space';
+    } else if (character) {
+      content = <GameOfThronesBingoCharacterTile character={character} />;
     } else {
-      content = character && (
-        <GameOfThronesBingoCharacterTile character={character} />
-      );
+      content = 'Click to Edit';
     }
 
     return (
