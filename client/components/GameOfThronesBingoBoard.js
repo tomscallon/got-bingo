@@ -19,12 +19,17 @@ class GameOfThronesBingoBoard extends React.Component<Props> {
     } = this.props;
 
     return (
-      <BingoBoard
-        className={styles.root}
-        items={items}
-        renderFreeSpace={c => <GameOfThronesBingoBoardItem freeSpace={true} />}
-        renderItemSpace={c => <GameOfThronesBingoBoardItem character={c} />}
-      />
+      <div>
+        <input className={styles.titleInput} placeholder="My New Board" />
+        <BingoBoard
+          className={styles.root}
+          items={items}
+          renderFreeSpace={c => (
+            <GameOfThronesBingoBoardItem freeSpace={true} />
+          )}
+          renderItemSpace={c => <GameOfThronesBingoBoardItem character={c} />}
+        />
+      </div>
     );
   }
 }

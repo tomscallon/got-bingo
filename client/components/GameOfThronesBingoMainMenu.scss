@@ -1,4 +1,10 @@
+@import '../colors';
+
 :local(.root) {
+  
+}
+
+:local(.buttonWrapper) {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -7,4 +13,22 @@
     margin-top: 20px;
     font-size: 24px;
   }
+}
+
+:local(.title),
+:local(.subtitle) {
+  margin-top: 0;
+  font-family: 'Game of Thrones', 'Times New Roman', serif;
+  font-weight: normal;
+  text-align: center;
+  word-spacing: 10px;
+}
+
+:local(.title) {
+  font-size: 2em;
+}
+
+:local(.subtitle) {
+  color: $color-secondary;
+  font-size: 1em;
 }

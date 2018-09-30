@@ -35,6 +35,7 @@ class GameOfThronesBingoBoardItem extends React.Component<Props> {
 
     return (
       <div
+        tabindex={0}
         className={cx({
           [styles.root]: true,
           [styles.free]: freeSpace,

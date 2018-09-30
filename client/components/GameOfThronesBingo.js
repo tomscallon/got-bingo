@@ -30,13 +30,7 @@ class GameOfThronesBingo extends React.Component<{}, State> {
       <GameOfThronesBingoBoard board={currentBoard} />
     );
 
-    return (
-      <div className={styles.root}>
-        <h1 className={styles.title}>Game of Thrones Bingo</h1>
-        <h2 className={styles.subtitle}>Winter is Here</h2>
-        <div>{content}</div>
-      </div>
-    );
+    return <div className={styles.root}>{content}</div>;
   }
 }
 
