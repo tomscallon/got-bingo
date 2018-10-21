@@ -1,0 +1,35 @@
+@import '../../colors.scss';
+
+:local(.container) {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+:local(.root) {
+  display: contents;
+}
+
+:local(.trigger) {
+  display: contents;
+}
+
+:local(.wrapper) {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+:local(.content) {
+  display: block;
+  background-color: $color-primary;
+  border-radius: 5px;
+  box-shadow: 0 0 16px $color-box-shadow-dark;
+}

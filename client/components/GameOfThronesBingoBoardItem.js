@@ -8,6 +8,7 @@ import cx from 'classnames';
 
 import * as React from 'react';
 
+import Popover from './ui/Popover';
 import GameOfThronesBingoCharacterTile from './GameOfThronesBingoCharacterTile';
 
 type Props = {
@@ -24,16 +25,16 @@ class GameOfThronesBingoBoardItem extends React.Component<Props> {
   render(): React.Node {
     const { character, freeSpace } = this.props;
 
-    let content: React.Node;
+    let trigger: React.Node;
     if (freeSpace) {
-      content = 'Free Space';
+      trigger = 'Free Space';
     } else if (character) {
-      content = <GameOfThronesBingoCharacterTile character={character} />;
+      trigger = <GameOfThronesBingoCharacterTile character={character} />;
     } else {
-      content = 'Click to Edit';
+      trigger = 'Click to Edit';
     }
 
-    return (
+    trigger = (
       <div
         tabindex={0}
         className={cx({
@@ -42,8 +43,16 @@ class GameOfThronesBingoBoardItem extends React.Component<Props> {
           [styles.empty]: !freeSpace && !character,
         })}
       >
-        {content}
+        {trigger}
       </div>
+    );
+
+    return (
+      <Popover
+        trigger={trigger}
+        content={<div>Hello there...</div>}
+        minWidth={100}
+      />
     );
   }
 }
