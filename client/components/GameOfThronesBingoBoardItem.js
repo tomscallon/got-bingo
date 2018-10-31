@@ -10,6 +10,7 @@ import * as React from 'react';
 
 import Popover from './ui/Popover';
 import GameOfThronesBingoCharacterTile from './GameOfThronesBingoCharacterTile';
+import GameOfThronesBingoBoardItemPopover from './GameOfThronesBingoBoardItemPopover';
 
 type Props = {
   freeSpace: boolean,
@@ -50,7 +51,7 @@ class GameOfThronesBingoBoardItem extends React.Component<Props> {
     return (
       <Popover
         trigger={trigger}
-        content={<div>Hello there...</div>}
+        content={<GameOfThronesBingoBoardItemPopover />}
         minWidth={100}
       />
     );
