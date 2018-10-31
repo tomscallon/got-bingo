@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // How much space between popover and its trigger element, edges of screen.
 // Keep this in sync with the `padding` declaration in the SCSS file.
-const PADDING = 5;
+const PADDING = 10;
 
 class Popover extends React.Component<Props, State> {
   state = {

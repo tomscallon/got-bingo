@@ -17,6 +17,7 @@
   box-shadow: 0 0 8px $color-box-shadow;
   transition-property: transform, opacity, background-color, color;
   transition-duration: 0.3s;
+  user-select: none;
 
   &:hover,
   &:focus {

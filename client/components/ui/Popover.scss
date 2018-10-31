@@ -28,6 +28,7 @@
 }
 
 :local(.content) {
+  pointer-events: all;
   display: block;
   background-color: $color-primary;
   border-radius: 5px;
