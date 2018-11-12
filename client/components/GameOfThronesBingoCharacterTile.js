@@ -16,7 +16,8 @@ class GameOfThronesBingoCharacterTile extends React.Component<Props> {
     const style = { backgroundImage: `url(${imageURL})` };
 
     return (
-      <div className={styles.root} style={style}>
+      <div className={styles.root}>
+        <div className={styles.background} style={style} />
         <div className={styles.name}>{name}</div>
       </div>
     );

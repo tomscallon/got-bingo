@@ -2,6 +2,13 @@
 
 import type { Character } from '../types';
 
+/**
+ * Images are all stored in image/character/*. All are square, with side lengths
+ * of at least 300px.
+ */
+
+const IMAGE_FOLDER = 'image/character';
+
 const characters: Array<Character> = [
   {
     name: 'Tyrion Lannister',
@@ -14,17 +21,17 @@ const characters: Array<Character> = [
       'Demon Monkey',
       'Dwarf',
     ],
-    imageURL: '',
+    imageURL: 'tyrion.jpg',
   },
   {
     name: 'Jamie Lannister',
     nicknames: ['Kingslayer', 'Oathbreaker', 'The Young Lion'],
-    imageURL: '',
+    imageURL: 'jaime.jpg',
   },
   {
     name: 'Cersei Lannister',
     nicknames: ['The Lioness'],
-    imageURL: '',
+    imageURL: 'cersei.jpg',
   },
   {
     name: 'Daenerys Targaryen',
@@ -38,7 +45,7 @@ const characters: Array<Character> = [
       'The Dragon Queen',
       'Khaleesi',
     ],
-    imageURL: '',
+    imageURL: 'daenerys.jpg',
   },
   {
     name: 'Jon Snow',
@@ -49,17 +56,17 @@ const characters: Array<Character> = [
       'King Crow',
       'White Wolf',
     ],
-    imageURL: '',
+    imageURL: 'jon.jpg',
   },
   {
     name: 'Davos Seaworth',
     nicknames: ['The Onion Knight', 'The Onion Lord', 'Davos Shorthand'],
-    imageURL: '',
+    imageURL: 'davos.jpg',
   },
   {
     name: 'Sansa Stark',
     nicknames: ['Little Dove', 'Little Bird', 'Alayne', 'Jonquil'],
-    imageURL: '',
+    imageURL: 'sansa.jpg',
   },
   {
     name: 'Arya Stark',
@@ -71,7 +78,7 @@ const characters: Array<Character> = [
       'Cat of the Canals',
       'No One',
     ],
-    imageURL: '',
+    imageURL: 'arya.jpg',
   },
   {
     name: 'Bran Stark',
@@ -81,17 +88,17 @@ const characters: Array<Character> = [
       'Bran the Broken',
       'The Winged Wolf',
     ],
-    imageURL: '',
+    imageURL: 'bran.png',
   },
   {
     name: 'Missandei',
     nicknames: [],
-    imageURL: '',
+    imageURL: 'missandei.jpg',
   },
   {
     name: 'Brienne of Tarth',
     nicknames: ['Brienne the Beauty', 'The Maid of Tarth', 'Brienne the Blue'],
-    imageURL: '',
+    imageURL: 'brienne.jpg',
   },
   {
     name: 'Samwell Tarly',
@@ -103,42 +110,42 @@ const characters: Array<Character> = [
       'Lord of Ham',
       'Black Sam',
     ],
-    imageURL: '',
+    imageURL: 'samwell.jpg',
   },
   {
     name: 'Gilly',
     nicknames: [],
-    imageURL: '',
+    imageURL: 'gilly.jpg',
   },
   {
     name: 'Sandor Clegane',
     nicknames: ['The Hound', 'Dog'],
-    imageURL: '',
+    imageURL: 'sandor.jpg',
   },
   {
     name: 'Jorah Mormont',
     nicknames: ['Jorah the Andal'],
-    imageURL: '',
+    imageURL: 'jorah.jpg',
   },
   {
     name: 'Lord Varys',
     nicknames: ['The Spider', 'The Eunuch', 'Rugen', 'Varys of Lys'],
-    imageURL: '',
+    imageURL: 'varys.jpg',
   },
   {
     name: 'Lady Melisandre',
     nicknames: ['Melisandre of Asshai', 'The Red Woman', 'The Red Witch'],
-    imageURL: '',
+    imageURL: 'melisandre.jpg',
   },
   {
     name: 'Bronn',
     nicknames: ['Ser Bronn of the Blackwater', 'Cooper', 'The Cutthroat'],
-    imageURL: '',
+    imageURL: 'bronn.jpg',
   },
   {
     name: 'Gendry',
     nicknames: ['Clovis', 'The Bull', 'Ser Gendry of the Hollow Hill'],
-    imageURL: '',
+    imageURL: 'gendry.jpg',
   },
   {
     name: 'Theon Greyjoy',
@@ -151,22 +158,22 @@ const characters: Array<Character> = [
       'Theon Kinslayer',
       'The Prince of Stink',
     ],
-    imageURL: '',
+    imageURL: 'theon.jpg',
   },
   {
     name: 'Yara Greyjoy',
     nicknames: ['Asha Greyjoy'],
-    imageURL: '',
+    imageURL: 'yara.jpg',
   },
   {
     name: 'Euron Greyjoy',
     nicknames: ["Crow's Eye"],
-    imageURL: '',
+    imageURL: 'euron.jpg',
   },
   {
     name: 'Eddison Tollett',
     nicknames: ['Dolorous Edd'],
-    imageURL: '',
+    imageURL: 'edd.jpg',
   },
   {
     name: 'Tormund',
@@ -180,7 +187,7 @@ const characters: Array<Character> = [
       'Speaker to Gods',
       'Father of Hosts',
     ],
-    imageURL: '',
+    imageURL: 'tormund.jpg',
   },
   {
     name: 'Gregor Clegane',
@@ -192,98 +199,98 @@ const characters: Array<Character> = [
       'The Enormity That Rides',
       'Robert Strong',
     ],
-    imageURL: '',
+    imageURL: 'gregor.png',
   },
   {
     name: 'Grey Worm',
     nicknames: ['Torkonodo'],
-    imageURL: '',
+    imageURL: 'grey-worm.jpg',
   },
   {
     name: 'Podrick Payne',
     nicknames: ['Pod'],
-    imageURL: '',
+    imageURL: 'podrick.jpg',
   },
   {
     name: 'Yohn Royce',
     nicknames: ['Bronze Yohn'],
-    imageURL: '',
+    imageURL: 'yohn.jpg',
   },
   {
     name: 'Harry Strickland',
     nicknames: [],
-    imageURL: '',
+    imageURL: 'harry-TEMP.jpg',
   },
   {
     name: 'Qyburn',
     nicknames: [],
-    imageURL: '',
+    imageURL: 'qyburn.png',
   },
   {
     name: 'Beric Donarrion',
     nicknames: ['The Lightning Lord'],
-    imageURL: '',
+    imageURL: 'beric.png',
   },
   {
     name: 'Drogon',
     nicknames: ['The Winged Shadow'],
-    imageURL: '',
+    imageURL: 'drogon.jpg',
   },
   {
     name: 'Rhaegal',
     nicknames: [],
-    imageURL: '',
+    imageURL: 'rhaegal.png',
   },
   {
     name: 'Ghost',
     nicknames: [],
-    imageURL: '',
+    imageURL: 'ghost.png',
   },
   {
     name: 'Night King',
     nicknames: [],
-    imageURL: '',
+    imageURL: 'night-king.jpg',
   },
   {
     name: 'Meera Reed',
     nicknames: [],
-    imageURL: '',
+    imageURL: 'meera.jpg',
   },
   {
     name: 'Robert Arryn',
     nicknames: ['Robin Arryn'],
-    imageURL: '',
+    imageURL: 'robert-arryn.jpg',
   },
   {
     name: 'Ellaria Sand',
     nicknames: [],
-    imageURL: '',
+    imageURL: 'ellaria.jpg',
   },
   {
     name: 'Lyanna Mormont',
     nicknames: [],
-    imageURL: '',
+    imageURL: 'lyanna.jpg',
   },
   {
     name: 'Edmure Tully',
     nicknames: [],
-    imageURL: '',
+    imageURL: 'edmure.png',
   },
   {
     name: 'Tycho Nestoris',
     nicknames: [],
-    imageURL: '',
+    imageURL: 'tycho.jpg',
   },
   {
     name: 'Hot Pie',
     nicknames: [],
-    imageURL: '',
+    imageURL: 'hot-pie.png',
   },
   {
     name: 'Ilyn Payne',
     nicknames: [],
-    imageURL: '',
+    imageURL: 'ilyn.jpg',
   },
-];
+].map(c => ((c.imageURL = `${IMAGE_FOLDER}/${c.imageURL}`), c));
 
 export default characters;

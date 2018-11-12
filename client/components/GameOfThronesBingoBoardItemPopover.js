@@ -30,10 +30,16 @@ class GameOfThronesBingoBoardItemPopover extends React.Component<Props, State> {
       : characters;
 
     return (
-      <div className={styles.grid}>
-        {matchingCharacters.map(c => (
-          <GameOfThronesBingoCharacterTile character={c} />
-        ))}
+      <div className={styles.resultWrapper}>
+        {matchingCharacters.length === 0 ? (
+          <div className={styles.noResults}>Nobody matched your search!</div>
+        ) : (
+          <div className={styles.grid}>
+            {matchingCharacters.map(c => (
+              <GameOfThronesBingoCharacterTile character={c} />
+            ))}
+          </div>
+        )}
       </div>
     );
   }

@@ -9,6 +9,17 @@
   font-weight: 200;
 }
 
+:local(.background) {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  transition: filter 0.3s;
+
+  :local(.root):hover & {
+    filter: blur(3px);
+  }
+}
+
 :local(.name) {
   position: absolute;
   left: 0;
@@ -16,6 +27,7 @@
   right: 0;
   bottom: 0;
   display: flex;
+  z-index: 1;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -27,4 +39,5 @@
 
 :local(.root):hover :local(.name) {
   opacity: 1;
+  filter: none;
 }
