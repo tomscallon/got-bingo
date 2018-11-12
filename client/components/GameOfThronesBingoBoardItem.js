@@ -48,13 +48,17 @@ class GameOfThronesBingoBoardItem extends React.Component<Props> {
       </div>
     );
 
-    return (
+    let content = freeSpace ? (
+      trigger
+    ) : (
       <Popover
         trigger={trigger}
         content={<GameOfThronesBingoBoardItemPopover />}
         minWidth={100}
       />
     );
+
+    return content;
   }
 }
 

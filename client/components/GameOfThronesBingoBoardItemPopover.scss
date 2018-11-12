@@ -1,5 +1,9 @@
 @import '../colors';
 
+:local(.root) {
+  width: 410px;
+}
+
 :local(.search) {
   box-sizing: border-box;
   width: 100%;
@@ -19,4 +23,14 @@
     border-color: $color-focus;
     outline: none;
   }
+}
+
+:local(.grid) {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(5, 70px);
+  box-sizing: border-box;
+  height: 250px;
+  padding: 10px;
+  overflow-y: scroll;
 }

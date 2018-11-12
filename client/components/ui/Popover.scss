@@ -30,6 +30,7 @@
 :local(.content) {
   pointer-events: all;
   display: block;
+  width: max-content;
   background-color: $color-primary;
   border-radius: 5px;
   box-shadow: 0 0 16px $color-box-shadow-dark;

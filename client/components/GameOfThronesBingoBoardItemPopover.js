@@ -3,6 +3,7 @@
 import styles from './GameOfThronesBingoBoardItemPopover.scss';
 
 import * as React from 'react';
+import GameOfThronesBingoCharacterTile from './GameOfThronesBingoCharacterTile';
 
 import characters from '../data/characters';
 
@@ -12,7 +13,11 @@ type State = { search: string };
 class GameOfThronesBingoBoardItemPopover extends React.Component<Props, State> {
   state = { search: '' };
 
-  onInputChange = (ev: Event) => this.setState({ search: ev.target.value });
+  onInputChange = (ev: Event) => {
+    if (!(ev.target instanceof HTMLInputElement)) return;
+
+    this.setState({ search: ev.target.value });
+  };
 
   renderCharacters(): React.Node {
     const search = this.state.search.toLowerCase();
@@ -25,9 +30,9 @@ class GameOfThronesBingoBoardItemPopover extends React.Component<Props, State> {
       : characters;
 
     return (
-      <div>
+      <div className={styles.grid}>
         {matchingCharacters.map(c => (
-          <div>{c.name}</div>
+          <GameOfThronesBingoCharacterTile character={c} />
         ))}
       </div>
     );
@@ -35,7 +40,7 @@ class GameOfThronesBingoBoardItemPopover extends React.Component<Props, State> {
 
   render(): React.Node {
     return (
-      <div>
+      <div className={styles.root}>
         <input
           className={styles.search}
           placeholder="Search for a character..."
