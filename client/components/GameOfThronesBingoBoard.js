@@ -9,14 +9,18 @@ import BingoBoard from './BingoBoard';
 import GameOfThronesBingoBoardItem from './GameOfThronesBingoBoardItem';
 
 type Props = {
-  board: Board,
+  board: ?Board,
 };
 
 class GameOfThronesBingoBoard extends React.Component<Props> {
   render(): React.Node {
-    const {
-      board: { items },
-    } = this.props;
+    const { board } = this.props;
+
+    if (board == null) {
+      return 'Use the menu to start a new board or open an existing one';
+    }
+
+    const { items } = board;
 
     return (
       <div>

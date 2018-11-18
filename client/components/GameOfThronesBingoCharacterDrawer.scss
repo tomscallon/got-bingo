@@ -1,7 +1,14 @@
 @import '../colors';
 
 :local(.root) {
-  width: 410px;
+  width: 250px;
+  height: calc(100vh - 40px);
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 20px 20px 20px 0;
+  background-color: $color-primary;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 :local(.search) {
@@ -12,8 +19,6 @@
   font-size: 1em;
   background-color: $color-secondary;
   border: 2px solid $color-secondary;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
 
   &::placeholder {
     color: $color-tertiary;
@@ -28,7 +33,7 @@
 :local(.resultWrapper) {
   position: relative;
   box-sizing: border-box;
-  height: 250px;
+  flex-grow: 1;
   padding: 10px;
   overflow-y: scroll;
 }

@@ -1,6 +1,6 @@
 /* @flow */
 
-import styles from './GameOfThronesBingoBoardItemPopover.scss';
+import styles from './GameOfThronesBingoCharacterDrawer.scss';
 
 import * as React from 'react';
 import GameOfThronesBingoCharacterTile from './GameOfThronesBingoCharacterTile';
@@ -10,7 +10,7 @@ import characters from '../data/characters';
 type Props = {};
 type State = { search: string };
 
-class GameOfThronesBingoBoardItemPopover extends React.Component<Props, State> {
+class GameOfThronesBingoCharacterDrawer extends React.Component<Props, State> {
   state = { search: '' };
 
   onInputChange = (ev: Event) => {
@@ -58,4 +58,4 @@ class GameOfThronesBingoBoardItemPopover extends React.Component<Props, State> {
   }
 }
 
-export default GameOfThronesBingoBoardItemPopover;
+export default GameOfThronesBingoCharacterDrawer;
