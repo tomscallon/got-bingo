@@ -2,12 +2,10 @@
 
 :local(.root) {
   width: 250px;
-  height: calc(100vh - 40px);
+  height: 100vh;
   display: flex;
   flex-flow: column nowrap;
-  margin: 20px 20px 20px 0;
   background-color: $color-primary;
-  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -41,7 +39,7 @@
 :local(.grid) {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(5, 70px);
+  grid-template-columns: repeat(3, 70px);
 }
 
 :local(.noResults) {

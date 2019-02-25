@@ -1,6 +1,7 @@
 /* @flow */
 
 export type Character = {|
+  id: number,
   name: string,
   nicknames: Array<string>,
   imageURL: string,

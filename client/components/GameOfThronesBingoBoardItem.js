@@ -7,14 +7,13 @@ import type { Character } from '../types';
 import cx from 'classnames';
 
 import * as React from 'react';
-
-import Popover from './ui/Popover';
 import GameOfThronesBingoCharacterTile from './GameOfThronesBingoCharacterTile';
 
 type Props = {
-  freeSpace: boolean,
   character?: ?Character,
-  onChange?: (?Character) => void,
+  freeSpace: boolean,
+  selected?: boolean,
+  onClick?: (index: number) => void,
 };
 
 class GameOfThronesBingoBoardItem extends React.Component<Props> {
@@ -23,31 +22,33 @@ class GameOfThronesBingoBoardItem extends React.Component<Props> {
   };
 
   render(): React.Node {
-    const { character, freeSpace } = this.props;
+    const { character, freeSpace, selected, onClick } = this.props;
 
-    let trigger: React.Node;
+    let content: React.Node;
     if (freeSpace) {
-      trigger = 'Free Space';
+      content = 'Free Space';
     } else if (character) {
-      trigger = <GameOfThronesBingoCharacterTile character={character} />;
+      content = <GameOfThronesBingoCharacterTile character={character} />;
     } else {
-      trigger = 'Click to Edit';
+      content = 'Click to Edit';
     }
 
-    trigger = (
+    content = (
       <div
-        tabindex={0}
+        tabindex={freeSpace ? undefined : 0}
         className={cx({
           [styles.root]: true,
           [styles.free]: freeSpace,
           [styles.empty]: !freeSpace && !character,
+          [styles.selected]: selected,
         })}
+        onClick={onClick}
       >
-        {trigger}
+        {content}
       </div>
     );
 
-    return trigger;
+    return content;
   }
 }
 

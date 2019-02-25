@@ -1,6 +1,7 @@
 @import '../colors';
 
 :local(.root) {
+  user-select: none;
   position: relative;
   width: 70px;
   height: 70px;
@@ -28,6 +29,7 @@
   bottom: 0;
   display: flex;
   z-index: 1;
+  padding: 2px;
   text-align: center;
   align-items: center;
   justify-content: center;

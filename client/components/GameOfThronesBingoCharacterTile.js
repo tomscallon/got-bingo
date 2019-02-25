@@ -8,15 +8,19 @@ import * as React from 'react';
 
 type Props = {
   character: Character,
+  onClick?: () => void,
 };
 
 class GameOfThronesBingoCharacterTile extends React.Component<Props> {
   render(): React.Node {
-    const { name, imageURL } = this.props.character;
+    const {
+      character: { name, imageURL },
+      onClick,
+    } = this.props;
     const style = { backgroundImage: `url(${imageURL})` };
 
     return (
-      <div className={styles.root}>
+      <div className={styles.root} onClick={onClick}>
         <div className={styles.background} style={style} />
         <div className={styles.name}>{name}</div>
       </div>

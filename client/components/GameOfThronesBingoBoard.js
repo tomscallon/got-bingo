@@ -10,11 +10,13 @@ import GameOfThronesBingoBoardItem from './GameOfThronesBingoBoardItem';
 
 type Props = {
   board: ?Board,
+  selectedItem?: ?number,
+  onClickItem?: (index: number) => void,
 };
 
 class GameOfThronesBingoBoard extends React.Component<Props> {
   render(): React.Node {
-    const { board } = this.props;
+    const { board, selectedItem, onClickItem } = this.props;
 
     if (board == null) {
       return 'Use the menu to start a new board or open an existing one';
@@ -24,14 +26,20 @@ class GameOfThronesBingoBoard extends React.Component<Props> {
 
     return (
       <div>
-        <input className={styles.titleInput} placeholder="My New Board" />
+        <input className={styles.titleInput} placeholder="Name your board..." />
         <BingoBoard
           className={styles.root}
           items={items}
           renderFreeSpace={c => (
             <GameOfThronesBingoBoardItem freeSpace={true} />
           )}
-          renderItemSpace={c => <GameOfThronesBingoBoardItem character={c} />}
+          renderItemSpace={(c, _r, _c, i) => (
+            <GameOfThronesBingoBoardItem
+              character={c}
+              selected={selectedItem === i}
+              onClick={onClickItem && (() => onClickItem(i))}
+            />
+          )}
         />
       </div>
     );

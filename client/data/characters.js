@@ -55,6 +55,7 @@ const characters: Array<Character> = [
       'Bastard of Winterfell',
       'King Crow',
       'White Wolf',
+      'Stark Bastard',
     ],
     imageURL: 'jon.jpg',
   },
@@ -291,6 +292,9 @@ const characters: Array<Character> = [
     nicknames: [],
     imageURL: 'ilyn.jpg',
   },
-].map(c => ((c.imageURL = `${IMAGE_FOLDER}/${c.imageURL}`), c));
+]
+  .map(c => ((c.imageURL = `${IMAGE_FOLDER}/${c.imageURL}`), c))
+  .map((c, index) => ({ id: index, ...c }))
+  .sort((c1, c2) => c1.name.localeCompare(c2.name));
 
 export default characters;

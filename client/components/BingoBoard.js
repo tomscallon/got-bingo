@@ -6,7 +6,12 @@ import * as React from 'react';
 type Props<T> = {
   className?: string,
   items: Array<?T>,
-  renderItemSpace: (item: ?T, row: number, col: number) => React.Node,
+  renderItemSpace: (
+    item: ?T,
+    row: number,
+    col: number,
+    index: number,
+  ) => React.Node,
   renderFreeSpace: () => React.Node,
 };
 
@@ -15,8 +20,8 @@ class BingoBoard<T> extends React.Component<Props<T>> {
     renderFreeSpace: () => 'Free Space',
   };
 
-  _renderSpace(item: ?T, row: number, col: number): React.Node {
-    return this.props.renderItemSpace(item, row, col);
+  _renderSpace(item: ?T, row: number, col: number, index: number): React.Node {
+    return this.props.renderItemSpace(item, row, col, index);
   }
 
   _renderFreeSpace(): React.Node {
@@ -32,7 +37,9 @@ class BingoBoard<T> extends React.Component<Props<T>> {
         if (row === 2 && col === 2) continue;
 
         // Render the item at the current spot.
-        renderedItems.push(this._renderSpace(items[itemIndex++], row, col));
+        renderedItems.push(
+          this._renderSpace(items[itemIndex], row, col, itemIndex++),
+        );
       }
     }
 
