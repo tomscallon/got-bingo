@@ -26,28 +26,27 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env', '@babel/preset-flow', '@babel/preset-react'],
-          plugins: ['transform-class-properties']
-        }
+          presets: [
+            '@babel/preset-env',
+            '@babel/preset-flow',
+            '@babel/preset-react',
+          ],
+          plugins: [
+            'transform-class-properties',
+            '@babel/plugin-proposal-nullish-coalescing-operator',
+          ],
+        },
       },
       {
         test: /\.scss$/,
-        loader: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
-        ]
-      }
-    ]
+        loader: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
+    ],
   },
 
   // How to resolve paths
   resolve: {
-    modules: [
-      'node_modules',
-      path.resolve(__dirname)
-    ],
-    extensions: ['.js', '.json', '.jsx', '.css']
-  }
+    modules: ['node_modules', path.resolve(__dirname)],
+    extensions: ['.js', '.json', '.jsx', '.css'],
+  },
 };

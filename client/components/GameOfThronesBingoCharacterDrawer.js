@@ -2,33 +2,51 @@
 
 import styles from './GameOfThronesBingoCharacterDrawer.scss';
 
+import type { Character } from '../types';
+
 import * as React from 'react';
 import GameOfThronesBingoCharacterTile from './GameOfThronesBingoCharacterTile';
 
 import characters from '../data/characters';
 
-type Props = { onClickCharacter: (id: number) => void };
+import { nullthrows } from '../util/func';
+
+type Props = { onSelectCharacter: (id: number) => void };
 type State = { search: string };
+
+const ENTER_KEY = 13;
 
 class GameOfThronesBingoCharacterDrawer extends React.Component<Props, State> {
   state = { search: '' };
 
   _inputRef: ?HTMLInputElement = null;
+  _lastMatchingCharacterList: Array<Character> = [];
 
   focusInput(): void {
-    if (this._inputRef) {
-      this._inputRef.focus();
-    }
+    nullthrows(this._inputRef).focus();
   }
 
-  _onInputChange = (ev: Event) => {
-    if (!(ev.target instanceof HTMLInputElement)) return;
+  clearInput(): void {
+    console.log('clearing input');
+    this.setState({
+      search: '',
+    });
+  }
 
-    this.setState({ search: ev.target.value });
+  _onInputChange = (ev: SyntheticEvent<HTMLInputElement>) => {
+    this.setState({ search: ev.currentTarget.value });
+  };
+
+  _onInputKeyPress = (ev: SyntheticKeyboardEvent<HTMLInputElement>) => {
+    const key = ev.keyCode || ev.which;
+
+    if (key === ENTER_KEY && this._lastMatchingCharacterList.length === 1) {
+      this.props.onSelectCharacter(this._lastMatchingCharacterList[0].id);
+    }
   };
 
   _renderCharacters(): React.Node {
-    const { onClickCharacter } = this.props;
+    const { onSelectCharacter } = this.props;
     const search = this.state.search.toLowerCase();
     const matchingCharacters = search
       ? characters.filter(
@@ -37,6 +55,9 @@ class GameOfThronesBingoCharacterDrawer extends React.Component<Props, State> {
             c.nicknames.some(name => name.toLowerCase().includes(search)),
         )
       : characters;
+
+    // Save the matching character list for later use.
+    this._lastMatchingCharacterList = matchingCharacters;
 
     return (
       <div className={styles.resultWrapper}>
@@ -47,7 +68,7 @@ class GameOfThronesBingoCharacterDrawer extends React.Component<Props, State> {
             {matchingCharacters.map(c => (
               <GameOfThronesBingoCharacterTile
                 character={c}
-                onClick={() => onClickCharacter(c.id)}
+                onClick={() => onSelectCharacter(c.id)}
               />
             ))}
           </div>
@@ -62,8 +83,10 @@ class GameOfThronesBingoCharacterDrawer extends React.Component<Props, State> {
         <input
           ref={e => (this._inputRef = e)}
           className={styles.search}
+          value={this.state.search}
           placeholder="Search for a character..."
           onChange={this._onInputChange}
+          onKeyPress={this._onInputKeyPress}
         />
         {this._renderCharacters()}
       </div>

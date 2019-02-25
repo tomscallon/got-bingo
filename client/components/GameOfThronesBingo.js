@@ -8,7 +8,11 @@ import GameOfThronesBingoBoard from './GameOfThronesBingoBoard';
 import GameOfThronesBingoMainMenu from './GameOfThronesBingoMainMenu';
 import GameOfThronesBingoCharacterDrawer from './GameOfThronesBingoCharacterDrawer';
 
-import { createBlankBoard, setItem } from '../util/boardUtils';
+import {
+  createBlankBoard,
+  findNextEmptySpace,
+  setItem,
+} from '../util/boardUtils';
 import { nullthrows } from '../util/func';
 
 import characters from '../data/characters';
@@ -21,12 +25,12 @@ type State = {|
 |};
 
 class GameOfThronesBingo extends React.Component<{}, State> {
-  _drawerRef: ?GameOfThronesBingoCharacterDrawer = null;
-
   state: State = {
     currentBoard: createBlankBoard(),
     editState: null,
   };
+
+  _drawerRef: ?GameOfThronesBingoCharacterDrawer = null;
 
   _loadBoard = (board: Board) => {
     this.setState(() => ({ currentBoard: board }));
@@ -43,8 +47,8 @@ class GameOfThronesBingo extends React.Component<{}, State> {
 
       // If a board item was just selected, focus the character
       // search field.
-      if (type === 'item' && this._drawerRef) {
-        this._drawerRef.focusInput();
+      if (type === 'item') {
+        nullthrows(this._drawerRef).focusInput();
       }
     } else {
       // Otherwise, set the selected item to the selected character,
@@ -59,6 +63,28 @@ class GameOfThronesBingo extends React.Component<{}, State> {
         ),
         editState: null,
       }));
+
+      // Clear the character drawer input.
+      nullthrows(this._drawerRef).clearInput();
+
+      // If possible, select the next empty space on the board.
+      // Otherwise, reset the edit state to empty.
+      const nextEmptyBoardIndex = findNextEmptySpace(
+        nullthrows(this.state.currentBoard),
+        itemIndex + 1,
+        true,
+      );
+      console.log('Selecting', nextEmptyBoardIndex);
+      const nextEditState =
+        nextEmptyBoardIndex != null && nextEmptyBoardIndex != itemIndex
+          ? { type: 'item', index: nextEmptyBoardIndex }
+          : null;
+      this.setState({ editState: nextEditState });
+
+      // If the edit state was set, focus the drawer input.
+      if (nextEditState != null) {
+        nullthrows(this._drawerRef).focusInput();
+      }
     }
   };
 
@@ -77,7 +103,7 @@ class GameOfThronesBingo extends React.Component<{}, State> {
         />
         <GameOfThronesBingoCharacterDrawer
           ref={c => (this._drawerRef = c)}
-          onClickCharacter={this._updateEditState('character')}
+          onSelectCharacter={this._updateEditState('character')}
         />
       </div>
     );
